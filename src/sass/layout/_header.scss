@@ -1,0 +1,28 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+header.header {
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        // padding: 16px;
+        gap: 20px;
+    
+        ul {
+            @include m.reset_list();
+            gap: 16px;
+        }
+
+        a {
+            text-decoration: none;
+            color: v.$white;
+        }
+        h1 {
+            font-size: 1.5rem;
+        }
+        // .contenedor-fondo { 
+        // }
+    }
+}

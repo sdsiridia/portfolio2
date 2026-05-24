@@ -1,0 +1,13 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+html * {
+    font-family: v.$primary-font;
+    color:v.$white;
+    background-color: v.$black;
+}
+
+body {
+    overflow-x: hidden;
+    margin: 16px;
+} 

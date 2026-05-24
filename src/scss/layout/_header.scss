@@ -1,0 +1,21 @@
+@use "../base/variables" as v;
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    text-align: center;
+    h1 {
+        text-align: center;
+    }
+}
+
+.navbar {
+    list-style-type: none;
+    li {
+        display: inline-block;
+        margin: 0 10px;
+    }
+}

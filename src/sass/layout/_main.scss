@@ -1,0 +1,32 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+main.main {
+    margin-top: 40px;
+    padding: 16px;
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        
+            h2 {
+                font-size: 2.5rem;
+                }
+            span {
+                text-decoration: underline;
+                text-decoration-color: v.$green;
+                text-decoration-thickness: 3px;
+                text-underline-offset: 4px;
+            }
+            p {
+                font-size: 1rem;
+                color: v.$gray_3;
+            }
+            
+        .btn{
+            @include m.button();      
+            }
+    }
+}   

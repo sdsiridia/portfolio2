@@ -1,0 +1,36 @@
+@use './variables' as v;
+
+@mixin breakpoint($bp) {
+    @if $bp == tablet {
+        @media (min-width: v.$bp-tablet) {
+        @content;
+        }
+    }
+
+    @if $bp == tablethorizontal {
+        @media (min-width: v.$bp-tablet-horizontal) {
+        @content;
+        }
+    }
+
+    @if $bp == desktop {
+        @media (min-width: v.$bp-desktop) {
+        @content;
+        }
+    }
+
+    @if $bp == desktopxl {
+        @media (min-width: v.$bp-desktop-xl) {
+        @content;
+        }
+    }
+}
+
+// @mixin btn-contact{
+//         background-color: transparent;
+//         font-size: 1rem;
+//         font-weight: 600;
+//         text-transform: uppercase;
+//         letter-spacing: 2px;
+//         margin-top: 24px;
+// }
