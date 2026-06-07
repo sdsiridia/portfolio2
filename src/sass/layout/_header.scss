@@ -36,6 +36,18 @@ header.header {
         }
         // .contenedor-fondo { 
         // }
+        .circulo{
+            position: absolute;
+            width: 100px;
+            padding: 0;
+            margin: 0;
+            height: auto;
+            border-radius: 50%;
+            
+            top: 250px;
+            left: 350px;
+            z-index: 0;
+        }
     }
 }
 .oval__Desktop {
