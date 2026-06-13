@@ -6,6 +6,22 @@
     padding: 16px;
     max-width: 414px; 
     margin-inline: auto;
+    @include m.breakpoint(tablet){
+            max-width: 768px;
+            display: flex;
+            flex-direction: row;     /* Los ponemos uno al lado del otro */
+            flex-wrap: wrap;         /*  Permite que se vayan abajo */
+            justify-content: space-between;
+            align-items: stretch;
+            gap: 40px;
+            width: 100%;
+        }
+    &__1,&__2,&__3,&__4,&__5,&__6{
+        @include m.breakpoint(tablet){
+            width: calc(50% - 40px); /* 50% del ancho menos el gap de 40px */    
+            align-items: flex-start; /* Alineamos el contenido a la izquierda */
+        }
+    }
     .title{
         font-size: 1.5rem;
         // font-weight: 700;
@@ -113,79 +129,133 @@
         padding: 16px;
         max-width: 414px; 
         margin-inline: auto;
-        .hero__contact{
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: right;
+        @include m.breakpoint(tablet){
+            max-width: 768px;     
             justify-content: center;
-        .hero__contact__texto{
-            display: flex;
-            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            margin-bottom: 50px;
-            gap: 20px;
-            h1{
-                font-size: 2.5rem;
-            }
-            p{
-                font-size: 1.1rem;
-                
-            }
         }
-        .input-group 
-            {
-                margin: 20px;
-                
-                // border-bottom: 2px solid #ccc;
-                // padding-bottom: 30px;
-                input {
-                display: block;
-                // width: 100%;
-                border: none;
-                // border-bottom: 2px solid #ccc;
-                // padding: 3px 0;
-                outline: none; 
-                font-size: 16px;
-                background: transparent;
-                // margin-bottom: 30px;
-                // .linea{
-                //     margin: 40px;
-                // }
+        .hero__contact{
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center; 
+                @include m.breakpoint(tablet){
+                max-width: 768px;     
+                justify-content: flex-end;
+                align-items: center;
+                section:last-child {
+                    align-self: flex-start; /* Rompe la regla del padre y se alinea a la izquierda */
+                    width: 100%;        
+                    padding-right: 60px; /* Añade un poco de espacio a la derecha */    
                 }
             }
-        .input-group label {
-            display: block;
-            font-family: v.$primary-font;
-            font-size: 1rem;
-            color: v.$gray_2;
-            margin: 25px;
-            padding-left: 20px;
+            .hero__contact__texto{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 50px;
+                gap: 20px;
+                h1{
+                    font-size: 2.5rem;
+                    @include m.breakpoint(tablet){
+                        font-size: 4rem;
+                    }
+                }
+                p{
+                    font-size: 1.1rem;
+                    @include m.breakpoint(tablet){
+                        max-width: 450px;
+                        text-align: center;
+                    }
+                    
+                }
             }
-        .input-group textarea {
-            /* Elimina el estilo por defecto */
-            border: none;
-            background: transparent;
-            outline: none; /* Quita el borde azul al hacer clic */
-            
-            /* Crea la línea inferior */
-            // border-bottom: 2px solid #ccc;
-            
-            /* Ajustes de tamaño y comportamiento */
-            width: 100%;
-            resize: none; /* Evita que el usuario cambie el tamaño manualmente */
-            padding: 5px 0;
-            font-family: v.$primary-font;
-            
-            /* Efecto al escribir */
-            transition: border-bottom-color 0.3s ease;
+            .input-group 
+                {
+                    margin: 20px;
+                    
+                    
+                    // border-bottom: 2px solid #ccc;
+                    // padding-bottom: 30px;
+                    input {
+                    display: block;
+                    // width: 100%;
+                    border: none;
+                    // border-bottom: 2px solid #ccc;
+                    // padding: 3px 0;
+                    outline: none; 
+                    font-size: 16px;
+                    background: transparent;
+                    // margin-bottom: 30px;
+                    .linea{
+                        @include m.breakpoint(tablet){
+                            width: 100%;       /* Obliga a la imagen a ocupar todo el ancho disponible */
+                            display: block;    /* Quita un espacio en blanco rebelde que las imágenes suelen dejar abajo */
+                            height: auto;      /* Mantiene la proporción para que no se deforme (si tiene grosor) */
+                            object-fit: cover; /* Si es un patrón o línea continua, asegura que llene el espacio sin distorsionar */
+                        }
+                    }
+                    }
+                    @include m.breakpoint(tablet){
+                        min-width: 600px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: left;
+                        justify-content: center;
+
+                    }
+                }
+            .input-group label {
+                display: block;
+                font-family: v.$primary-font;
+                font-size: 1rem;
+                color: v.$gray_2;
+                margin: 25px;
+                padding-left: 20px;
+                
+                
+            }
+            .input-group textarea {
+                /* Elimina el estilo por defecto */
+                border: none;
+                background: transparent;
+                outline: none; /* Quita el borde azul al hacer clic */
+                
+                /* Crea la línea inferior */
+                // border-bottom: 2px solid #ccc;
+                
+                /* Ajustes de tamaño y comportamiento */
+                width: 100%;
+                resize: none; /* Evita que el usuario cambie el tamaño manualmente */
+                padding: 5px 0;
+                font-family: v.$primary-font;
+                
+                /* Efecto al escribir */
+                transition: border-bottom-color 0.3s ease;
+                @include m.breakpoint(tablet){
+                display: block;
+                font-family: v.$primary-font;
+                font-size: 1rem;
+                color: v.$gray_2;
+                margin: 25px;
+                padding-left: 20px;
+
+                }
+            }
+            .hero__contact_form{
+                gap: 20px;
+                margin-bottom: 50px;
+                @include m.breakpoint(tablet){
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    min-width: 600px;
+                }
+            }
         }
-        .hero__contact_form{
-            gap: 20px;
-            margin-bottom: 50px;
-        }
-    }
     .linea_hero_movil{
         margin-top: 80px;
         padding: 0;
@@ -201,9 +271,10 @@
     text-align: right;
     letter-spacing: 2.9px;
     font-size: 0.9rem;
-    // @include m.breakpoint(tablet){
-    //     color: red;
-    // }
+    @include m.breakpoint(tablet){
+        // color: red;
+        // display: block;
+    }
     .linea_contacto{
         width: 100%;
         max-width: 160px;
@@ -228,21 +299,40 @@
         width: 140%;
         height: 100%;
         top: 28%;
-        stroke: v.$gray_2;  
+        stroke: v.$gray_2; 
+        @include m.breakpoint(tablet){
+            left: -270px;
+            width: 50%;
+        }
     }
 
 .hero__contact__oval__Desktop__1 {
     top: 28%;
+    @include m.breakpoint(tablet){
+        top: 380px;
+    }
 }
 .hero__contact__oval__Desktop__2 {
     top: 30%;
+    @include m.breakpoint(tablet){
+        top: 340px;
+    }
 }
 .hero__contact__oval__Desktop__3 {
     top: 32%;
+    @include m.breakpoint(tablet){
+        top: 350px;
+    }
 }
 .hero__contact__oval__Desktop__4 {
     top: 34%;
+    @include m.breakpoint(tablet){
+        top: 360px;
+    }
 }
 .hero__contact__oval__Desktop__5 {
-    top: 36%;   
+    top: 36%;
+    @include m.breakpoint(tablet){
+        top: 370px;
+    }   
 }
