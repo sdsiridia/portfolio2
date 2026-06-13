@@ -12,9 +12,23 @@ main.main {
             gap: 20px;
             max-width: 414px; 
             margin-inline: auto;
+            @include m.breakpoint(tablet){
+                max-width: 768px;
+                align-items: flex-start;
+                }
         
             h2 {
                 font-size: 2.5rem;
+                .salto-tablet {
+                    display: none;
+                    }
+                @include m.breakpoint(tablet){
+                    font-size: 4rem;
+                    z-index: 1;
+                    .salto-tablet {
+                        display: inline;
+                        }
+                    }
                 }
             span {
                 text-decoration: underline;
@@ -25,6 +39,16 @@ main.main {
             p {
                 font-size: 1rem;
                 color: v.$gray_3;
+                .salto-tablet {
+                    display: none;
+                    }
+                @include m.breakpoint(tablet){
+                    font-size: 1.15rem;
+                    z-index: 1;
+                    .salto-tablet {
+                        display: inline;
+                        }
+                    }
             }
             
         .btn{
