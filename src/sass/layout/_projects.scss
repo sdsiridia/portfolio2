@@ -12,20 +12,45 @@
     gap: 20px;
     max-width: 414px; 
     margin-inline: auto;
+    @include m.breakpoint(tablet){
+        max-width: 768px;
+        // align-items: flex-start;
+        .linea_hero_movil{
+            width: 100%;
+        }
+        .linea_hero_movil_inferior{
+            display: none;
+        }
+    }
     .skills_sections {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 20px;
+        @include m.breakpoint(tablet){
+            flex-direction: row;     /* Los ponemos uno al lado del otro */
+            flex-wrap: wrap;         /*  Permite que se vayan abajo */
+            justify-content: space-between;
+            align-items: stretch;
+            gap: 40px;
+            width: 100%;
+        }
         .skills_section  {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             gap: 10px;
-            h3 {
+            @include m.breakpoint(tablet){
+                width: calc(50% - 40px); /* 50% del ancho menos el gap de 40px */    
+                align-items: flex-start; /* Alineamos el contenido a la izquierda */
+            }
+            h2 {
                 font-size: 1.5rem;
+                @include m.breakpoint(tablet){
+                    font-size: 2.25rem;
+                }
             }
             p {
                 font-size: 1rem;
@@ -33,6 +58,7 @@
             }
         }
     }
+}
     .title__projects{
         display: flex;
         flex-direction: row;
@@ -41,9 +67,15 @@
         // flex-wrap: wrap;
         justify-content: space-between;
         margin: 80px 16px 0 16px;
+        @include m.breakpoint(tablet){
+            width: 100%;
+            padding: 16px;
+        }
         h1{
             font-size: 2rem;
-            // color: red;
+            @include m.breakpoint(tablet){
+                font-size: 3.25rem;
+            }
         }
         h3{
             font-size: 1rem;
@@ -58,11 +90,8 @@
             justify-content: space-between;
             gap:15px;
             text-align: right;
-            // @include m.breakpoint(tablet){
-            //     color: red;
-            // }
+            
         }
-    }  
 
 // .hero__oval__desktop {
 //     position: absolute;
@@ -81,20 +110,39 @@
         top: 70%;
         stroke: v.$gray_2;
         z-index: -1;
+        @include m.breakpoint(tablet){
+            right: -20%;
+            width: 40%;
+        }
 }
 
 .hero__oval__Desktop__1 {
     top: 72%;
+    @include m.breakpoint(tablet){
+        top: 60%;
+    }
 }
 .hero__oval__Desktop__2 {
     top: 74%;
+    @include m.breakpoint(tablet){
+        top: 62%;
+    }
 }   
 .hero__oval__Desktop__3 {
     top: 76%;
+    @include m.breakpoint(tablet){
+        top: 64%;
+    }
 }
 .hero__oval__Desktop__4 {
     top: 78%;
+    @include m.breakpoint(tablet){
+        top: 66%;
+    }
 }
 .hero__oval__Desktop__5 {
     top: 80%;
+    @include m.breakpoint(tablet){
+        top: 68%;
+    }
 }
