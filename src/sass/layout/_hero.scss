@@ -159,22 +159,22 @@
                     align-self: flex-start; /* Rompe la regla del padre y se alinea a la izquierda */
                     width: 100%;        
                     padding-right: 60px; /* Añade un poco de espacio a la derecha */    
+                    }
                 }
-            }
-            @include m.breakpoint(desktop){
-            max-width: 1170px;
-            flex-direction: row;
-            justify-content: space-between;
-            gap:220px;
-            section:last-child {
-                    align-self: flex-start; /* Rompe la regla del padre y se alinea a la izquierda */
-                    width: 100%;        
-                    // padding-right: 60px; /* Añade un poco de espacio a la derecha */    
-                    position: absolute;
-                    top:600px;
-                    left:160px;
+                @include m.breakpoint(desktop){
+                max-width: 1170px;
+                flex-direction: row;
+                justify-content: flex-start;
+                gap:150px;
+                section:last-child {
+                        align-self: flex-start; /* Rompe la regla del padre y se alinea a la izquierda */
+                        width: 100%;        
+                        // padding-right: 60px; /* Añade un poco de espacio a la derecha */    
+                        position: absolute;
+                        top:600px;
+                        left:160px;
+                    }
                 }
-            }
             .hero__contact__texto{
                 display: flex;
                 flex-direction: column;
@@ -183,16 +183,20 @@
                 margin-bottom: 50px;
                 gap: 20px;
                 @include m.breakpoint(desktop){
-                    align-items: start;
+                    // align-items: start;
                     // margin-left: 50px;
+                    align-items: start; 
+                    justify-content: flex-start;
+                    margin-bottom: 330px;
                     }
                 h1{
                     font-size: 2.5rem;
                     @include m.breakpoint(tablet){
                         font-size: 4rem;
                     }
-                    @include m.breakpoint(tablet){
-                        font-size: 4rem;
+                    @include m.breakpoint(desktop){
+                        // font-size: 4rem;
+                        text-align: left;
                     }
                 }
                 p{
@@ -200,6 +204,12 @@
                     @include m.breakpoint(tablet){
                         max-width: 450px;
                         text-align: center;
+                    }
+                    @include m.breakpoint(desktop){
+                        font-size: 1rem;
+                        min-width: 400px;
+                        text-align: left;
+                        
                     }
                     
                 }
@@ -291,7 +301,7 @@
                     min-width: 600px;
                 }
                 @include m.breakpoint(desktop){
-                min-width: none;
+                min-width:auto;
                 gap: 50px;
                 }
             }
@@ -351,17 +361,28 @@
     @include m.breakpoint(tablet){
         top: 380px;
     }
+    @include m.breakpoint(desktop){
+        top: 20px;
+    }
+
 }
 .hero__contact__oval__Desktop__2 {
     top: 30%;
     @include m.breakpoint(tablet){
         top: 340px;
     }
+    @include m.breakpoint(desktop){
+        top: 29px;
+    }
+
 }
 .hero__contact__oval__Desktop__3 {
     top: 32%;
     @include m.breakpoint(tablet){
         top: 350px;
+    }
+    @include m.breakpoint(desktop){
+        top: 38px;
     }
 }
 .hero__contact__oval__Desktop__4 {
@@ -369,10 +390,17 @@
     @include m.breakpoint(tablet){
         top: 360px;
     }
+    @include m.breakpoint(desktop){
+        top: 47px;
+    }
 }
 .hero__contact__oval__Desktop__5 {
     top: 36%;
     @include m.breakpoint(tablet){
         top: 370px;
-    }   
+    }
+    @include m.breakpoint(desktop){
+        top: 56px;
+    }
 }
+
