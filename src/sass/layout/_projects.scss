@@ -22,6 +22,16 @@
             display: none;
         }
     }
+    @include m.breakpoint(desktop){
+        margin-top: 200px;
+        max-width: 1170px;
+        // .linea_hero_movil{
+        //     width: 90%;
+        //     height: 0%;
+            
+        // }
+
+    }
     .skills_sections {
         display: flex;
         flex-direction: column;
@@ -44,6 +54,11 @@
             gap: 10px;
             @include m.breakpoint(tablet){
                 width: calc(50% - 40px); /* 50% del ancho menos el gap de 40px */    
+                align-items: flex-start; /* Alineamos el contenido a la izquierda */
+            }
+            @include m.breakpoint(desktop){
+                margin-top: 40px;
+                width: calc(33% - 40px); /* 33% del ancho menos el gap de 40px */    
                 align-items: flex-start; /* Alineamos el contenido a la izquierda */
             }
             h2 {

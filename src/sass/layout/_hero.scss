@@ -16,8 +16,15 @@
             gap: 40px;
             width: 100%;
         }
+    @include m.breakpoint(desktop){
+            max-width: 1170px;
+        }
     &__1,&__2,&__3,&__4,&__5,&__6{
         @include m.breakpoint(tablet){
+            width: calc(50% - 40px); /* 50% del ancho menos el gap de 40px */    
+            align-items: flex-start; /* Alineamos el contenido a la izquierda */
+        }
+        @include m.breakpoint(desktop){
             width: calc(50% - 40px); /* 50% del ancho menos el gap de 40px */    
             align-items: flex-start; /* Alineamos el contenido a la izquierda */
         }
@@ -134,6 +141,10 @@
             justify-content: center;
             align-items: center;
         }
+        @include m.breakpoint(desktop){
+            max-width: 1170px;
+            padding: 84px 165px 92px 165px; 
+        }
         .hero__contact{
                 position: relative;
                 display: flex;
@@ -150,6 +161,19 @@
                     padding-right: 60px; /* Añade un poco de espacio a la derecha */    
                 }
             }
+            @include m.breakpoint(desktop){
+            max-width: 1170px;
+            flex-direction: row;
+            justify-content: space-between;
+            gap:220px;
+            section:last-child {
+                    align-self: flex-start; /* Rompe la regla del padre y se alinea a la izquierda */
+                    width: 100%;        
+                    // padding-right: 60px; /* Añade un poco de espacio a la derecha */    
+                    position: absolute;
+                    top:550px;
+                }
+            }
             .hero__contact__texto{
                 display: flex;
                 flex-direction: column;
@@ -157,8 +181,15 @@
                 justify-content: center;
                 margin-bottom: 50px;
                 gap: 20px;
+                @include m.breakpoint(desktop){
+                    align-items: start;
+                    // margin-left: 50px;
+                    }
                 h1{
                     font-size: 2.5rem;
+                    @include m.breakpoint(tablet){
+                        font-size: 4rem;
+                    }
                     @include m.breakpoint(tablet){
                         font-size: 4rem;
                     }
@@ -175,8 +206,6 @@
             .input-group 
                 {
                     margin: 20px;
-                    
-                    
                     // border-bottom: 2px solid #ccc;
                     // padding-bottom: 30px;
                     input {
@@ -196,6 +225,12 @@
                             height: auto;      /* Mantiene la proporción para que no se deforme (si tiene grosor) */
                             object-fit: cover; /* Si es un patrón o línea continua, asegura que llene el espacio sin distorsionar */
                         }
+                        @include m.breakpoint(desktop){
+                            display: none;
+                        }
+                    }
+                    .linea_desktop{
+                        display: none;
                     }
                     }
                     @include m.breakpoint(tablet){
@@ -204,7 +239,10 @@
                         flex-direction: column;
                         align-items: left;
                         justify-content: center;
-
+                    }
+                    @include m.breakpoint(desktop){
+                    min-width: none;
+                    max-width: 100px;
                     }
                 }
             .input-group label {
@@ -214,9 +252,7 @@
                 color: v.$gray_2;
                 margin: 25px;
                 padding-left: 20px;
-                
-                
-            }
+                }
             .input-group textarea {
                 /* Elimina el estilo por defecto */
                 border: none;
@@ -241,7 +277,6 @@
                 color: v.$gray_2;
                 margin: 25px;
                 padding-left: 20px;
-
                 }
             }
             .hero__contact_form{
@@ -253,6 +288,10 @@
                     align-items: center;
                     justify-content: center;
                     min-width: 600px;
+                }
+                @include m.breakpoint(desktop){
+                min-width: none;
+                gap: 50px;
                 }
             }
         }
@@ -271,10 +310,10 @@
     text-align: right;
     letter-spacing: 2.9px;
     font-size: 0.9rem;
-    @include m.breakpoint(tablet){
-        // color: red;
-        // display: block;
-    }
+    // @include m.breakpoint(desktop){
+    //     position: absoluta;
+    //     top:100px;
+    // }
     .linea_contacto{
         width: 100%;
         max-width: 160px;
