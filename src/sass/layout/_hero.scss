@@ -171,7 +171,8 @@
                     width: 100%;        
                     // padding-right: 60px; /* Añade un poco de espacio a la derecha */    
                     position: absolute;
-                    top:550px;
+                    top:600px;
+                    left:160px;
                 }
             }
             .hero__contact__texto{
@@ -225,13 +226,13 @@
                             height: auto;      /* Mantiene la proporción para que no se deforme (si tiene grosor) */
                             object-fit: cover; /* Si es un patrón o línea continua, asegura que llene el espacio sin distorsionar */
                         }
-                        @include m.breakpoint(desktop){
-                            display: none;
-                        }
+                        // @include m.breakpoint(desktop){
+                        //     display: none;
+                        // }
                     }
-                    .linea_desktop{
-                        display: none;
-                    }
+                    // .linea_desktop{
+                    //     display: none;
+                    // }
                     }
                     @include m.breakpoint(tablet){
                         min-width: 600px;
@@ -241,8 +242,8 @@
                         justify-content: center;
                     }
                     @include m.breakpoint(desktop){
-                    min-width: none;
-                    max-width: 100px;
+                    min-width: auto;
+                    // max-width: 100px;
                     }
                 }
             .input-group label {
