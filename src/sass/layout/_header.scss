@@ -2,7 +2,9 @@
 @use '../abstracts/mixins' as m;
 
 header.header {
-    
+    // @include m.breakpoint(desktop){
+    //     width: 100%;
+    // }
     .container {
         position: relative;
         display: flex;
@@ -26,6 +28,20 @@ header.header {
                 box-sizing: border-box;
                 }
             }
+        @include m.breakpoint(desktop){
+            max-width: 1170px;
+            padding: 0 89.51px 0 0;
+            width: 100%;
+            .menu{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-direction: row;
+                width: 100%;
+                // padding: 16px;
+                box-sizing: border-box;
+                }
+            }
 
         .contenedor-fondo{
             z-index: 1;
@@ -36,8 +52,14 @@ header.header {
             .persona-tablet{
                 display: none;
             }
+            .persona-desktop{
+                display: none;
+            }
             @include m.breakpoint(tablet){
                 .persona-movil{
+                    display: none;
+                }
+                .persona-desktop{
                     display: none;
                 }
                 .persona-tablet{
@@ -50,7 +72,22 @@ header.header {
                     height: auto;
                 }
             }
-            
+            @include m.breakpoint(desktop){
+                .persona-movil{
+                    display: none;
+                }
+                .persona-tablet{
+                    display: none;
+                }
+                .persona-desktop{
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 444.88px;
+                    height: auto;
+                }
+            }
         }
         ul {
             @include m.reset_list();
@@ -98,6 +135,21 @@ header.header {
                 left: 705px;
                 z-index: 2;
             }
+            @include m.breakpoint(desktop){
+                display:none;
+            }
+        }
+        .circulo_desktop{
+            display:none;
+            @include m.breakpoint(desktop){
+                display:block;
+                position: absolute;
+                width: 100%;
+                height: auto;
+                top: 515px;
+                left: 660px;
+                z-index: 2;
+            }
         }
     }
 }
@@ -117,6 +169,19 @@ header.header {
     stroke: v.$gray_2;
     // transform: translateY(-50%);
     // z-index: 1;
+    @include m.breakpoint(desktop){
+        width: 90%;
+        // position: absolute;
+        // top: 120px;
+        // left: -52%;
+        // width: 100%;
+        // height: auto;
+        // background-color: white;
+        // border-radius: 50% / 10%;
+        // stroke: v.$gray_2;
+        // transform: translateY(-50%);
+        // z-index: 1;
+    }
 }
 
 .oval__Desktop__1,
@@ -131,6 +196,20 @@ header.header {
     @include m.breakpoint(tablet){
         left: -85%;
     }
+    @include m.breakpoint(desktop){
+        width: 300px;
+        left: 50px;
+        // position: absolute;
+        // top: 120px;
+        // left: -52%;
+        // width: 100%;
+        // height: auto;
+        // background-color: white;
+        // border-radius: 50% / 10%;
+        // stroke: v.$gray_2;
+        // transform: translateY(-50%);
+        z-index: 3;
+    }
 }
 
 .oval__Desktop__1 {
@@ -139,6 +218,9 @@ header.header {
         top: 80px;
     }
     // z-index: 1;
+    @include m.breakpoint(desktop){
+        top: 80px;
+    }
 }
 .oval__Desktop__2 {
     top: -8px;
@@ -146,6 +228,9 @@ header.header {
         top: 92px;
     }
     // z-index: 2;
+    @include m.breakpoint(desktop){
+        top: 87px;
+    }
 }
 .oval__Desktop__3 {
     top: 2px;
@@ -153,6 +238,9 @@ header.header {
         top: 102px;
     }
     // z-index: 3;
+    @include m.breakpoint(desktop){
+        top: 94px;
+    }
 }
 .oval__Desktop__4 {
     top: 14px;
@@ -160,6 +248,9 @@ header.header {
         top: 114px;
     }
     // z-index: 4;
+    @include m.breakpoint(desktop){
+        top: 101px;
+    }
 }       
 .oval__Desktop__5 {
     top: 26px;
@@ -167,4 +258,7 @@ header.header {
         top: 126px;
     }
     // z-index: 5;
+    @include m.breakpoint(desktop){
+        top: 108px;
+    }
 }
