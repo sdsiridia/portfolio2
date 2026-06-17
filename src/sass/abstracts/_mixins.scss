@@ -51,4 +51,11 @@
         letter-spacing: 2px;
         margin-top: 24px;
         text-decoration: none;
+        transition: all 0.3s ease;
+        :hover {
+        color: $green;          /* Cambia el color a azul */
+        transform: scale(1.05);   /* Agranda el texto un 5% */
+        // padding-left: 10px;       /* Lo desplaza un poco a la derecha */
+        cursor: pointer;
+      }
 }
