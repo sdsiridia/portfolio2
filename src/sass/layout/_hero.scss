@@ -391,7 +391,7 @@
 
                 input[type="email"]:not(:placeholder-shown):invalid {
                     color: red;
-                    border-bottom: 2px solid red;
+                    // border-bottom: 2px solid red;
                 }
                 @include m.breakpoint(tablet){
                     display: flex;
