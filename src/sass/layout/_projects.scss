@@ -105,7 +105,13 @@
             justify-content: space-between;
             gap:15px;
             text-align: right;
-            
+            transition: all 0.3s ease;
+            :hover {
+            color: v.$green;          /* Cambia el color a azul */
+            transform: scale(1.05);   /* Agranda el texto un 5% */
+            // padding-left: 10px;       /* Lo desplaza un poco a la derecha */
+            cursor: pointer; 
+            }
         }
 
 // .hero__oval__desktop {
