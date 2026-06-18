@@ -185,6 +185,7 @@
         @include m.breakpoint(desktop){
             max-width: 1170px;
             padding: 84px 165px 92px 165px; 
+            overflow: hidden;
         }
         .hero__contact{
                 position: relative;
@@ -462,7 +463,7 @@
         top: 380px;
     }
     @include m.breakpoint(desktop){
-        top: 20px;
+        top: 120px;
     }
 
 }
@@ -472,7 +473,7 @@
         top: 340px;
     }
     @include m.breakpoint(desktop){
-        top: 29px;
+        top: 129px;
     }
 
 }
@@ -482,7 +483,7 @@
         top: 350px;
     }
     @include m.breakpoint(desktop){
-        top: 38px;
+        top: 138px;
     }
 }
 .hero__contact__oval__Desktop__4 {
@@ -491,7 +492,7 @@
         top: 360px;
     }
     @include m.breakpoint(desktop){
-        top: 47px;
+        top: 147px;
     }
 }
 .hero__contact__oval__Desktop__5 {
@@ -500,7 +501,7 @@
         top: 370px;
     }
     @include m.breakpoint(desktop){
-        top: 56px;
+        top: 156px;
     }
 }
 

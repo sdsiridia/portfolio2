@@ -25,6 +25,7 @@
     @include m.breakpoint(desktop){
         margin-top: 200px;
         max-width: 1170px;
+        overflow: hidden;
         // .linea_hero_movil{
         //     width: 90%;
         //     height: 0%;
@@ -142,11 +143,19 @@
     @include m.breakpoint(tablet){
         top: 60%;
     }
+    @include m.breakpoint(desktop){
+        top: 45%;
+        right: -25%;
+    }
 }
 .hero__oval__Desktop__2 {
     top: 74%;
     @include m.breakpoint(tablet){
         top: 62%;
+    }
+    @include m.breakpoint(desktop){
+        top: 47%;
+        right: -25%;
     }
 }   
 .hero__oval__Desktop__3 {
@@ -154,16 +163,28 @@
     @include m.breakpoint(tablet){
         top: 64%;
     }
+    @include m.breakpoint(desktop){
+        top: 49%;
+        right: -25%;
+    }
 }
 .hero__oval__Desktop__4 {
     top: 78%;
     @include m.breakpoint(tablet){
         top: 66%;
     }
+    @include m.breakpoint(desktop){
+        top: 51%;
+        right: -25%;
+    }
 }
 .hero__oval__Desktop__5 {
     top: 80%;
     @include m.breakpoint(tablet){
         top: 68%;
+    }
+    @include m.breakpoint(desktop){
+        top: 53%;
+        right: -25%;
     }
 }
